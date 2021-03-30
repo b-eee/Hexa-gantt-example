@@ -1,0 +1,43 @@
+<div scope-element="$divContainer" ng-show="$ctrl.task" ng-class="{
+		'task-information-container' : true,
+		'newItemBackground' : $ctrl.isEditing
+	}">
+	<div>
+		<img src="https://img.icons8.com/ios/50/000000/settings.png" ng-if="$ctrl.isEditing === false" style="width: 28px; height: 28px;" ng-click="$ctrl.switchEditMode()" class="gear-icon">
+		<img src="https://img.icons8.com/ios-filled/50/000000/settings.png" ng-if="$ctrl.isEditing === true" style="width: 28px; height: 28px;" ng-click="$ctrl.switchEditMode()"  class="gear-icon">
+	</div>
+	<div ng-click="$ctrl.closeTooltip()" class="tooltipX">
+		<!-- X -->
+		&#10006
+	</div>
+	<br/>
+	<div class="customerNameTooltip">
+		{{$ctrl.task.data.roomName}}
+	</div>
+	<div ng-if="$ctrl.isEditing === false">
+		<div class="tooltipInfo">
+			<span class="staticInfo">
+				予約日時:{{$ctrl.task.from.format('M/D HH:mm')}} ~ {{$ctrl.task.to.format('M/D HH:mm')}}
+			</span>
+		</div>
+		<div class="tooltipInfo">
+			<span class="staticInfo">
+				予約番号:{{$ctrl.task.data.reservationNo}}
+			</span>
+		</div>
+		<div class="tooltipInfo">
+			<span class="staticInfo">
+				予約者名:{{$ctrl.task.data.person}}
+			</span>
+		</div>
+		<div class="tooltipInfo">
+			<span class="staticInfo">
+				コメント:{{$ctrl.task.data.notes}}
+			</span>
+		</div>
+		<div class="delete_button">
+			<confirmation-button-component confirmation="$ctrl.deleteTask()"></confirmation-button-component>
+		</div>
+	</div>
+	<edit-item-component ng-show="$ctrl.isEditing === true"></edit-item-component>
+</div>

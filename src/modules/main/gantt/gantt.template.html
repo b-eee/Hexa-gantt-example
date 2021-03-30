@@ -1,0 +1,52 @@
+
+<!-- template-url="" -->
+<div gantt
+	data="$ctrl.dataService.data"
+	api="$ctrl.$scope.registerApi"
+	from-date="$ctrl.service.fromDate"
+	to-date="$ctrl.service.toDate"
+	allow-side-resizing="false"
+	headers="['firstLetter', 'secondLetter']"
+	headers-formats="$ctrl.service.headersFormat"
+	headers-scales="$ctrl.service.headersScales"
+	view-scale="$ctrl.service.scales"
+	column-width="$ctrl.service.columnWidth"
+	expand-to-fit="true"
+	max-height='$ctrl.maxHeight'
+	auto-expand='both'
+	task-out-of-range='expand'>
+	<gantt-table
+		enabled="true"
+		headers="{'model.name': $ctrl.headerName}"
+	></gantt-table>
+	
+	<gantt-tree enabled="false"></gantt-tree>
+	<gantt-groups enabled="false"></gantt-groups>
+	<gantt-tooltips enabled="false"></gantt-tooltips>
+	<gantt-bounds enabled="false"></gantt-bounds>
+	<gantt-progress enabled="false"></gantt-progress>
+	<gantt-sortable enabled="false"></gantt-sortable>
+	<gantt-movable
+	allow-row-switching='!$ctrl.dataService.dataHasBeenChanged'
+	allow-moving='!$ctrl.dataService.dataHasBeenChanged'
+	allow-resizing='!$ctrl.dataService.dataHasBeenChanged && !$ctrl.isMobile'></gantt-movable>
+	<gantt-draw-task
+		enabled='!$ctrl.service.drawDisabled && !$ctrl.dataService.dataHasBeenChanged'
+		move-threshold="5"
+		task-factory="$ctrl.drawTaskFactory">
+	</gantt-draw-task>
+	<gantt-resize-sensor></gantt-resize-sensor>
+	<gantt-overlap enabled="true"></gantt-overlap>
+	<gantt-dependencies
+		enabled="true"
+		read-only="false"
+		endpoints="[]"
+		fallback-endpoints="[]">
+	</gantt-dependencies>
+</div>
+<task-information-component></task-information-component>
+<!-- <car-info-component></car-info-component> -->
+<new-item-component on-close="$ctrl.resetNewTaskId()"></new-item-component>
+<toaster-container></toaster-container>
+<confirm-popup-component ></confirm-popup-component>
+<count-down-component></count-down-component>

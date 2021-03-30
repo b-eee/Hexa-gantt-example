@@ -1,0 +1,106 @@
+.car-information-container {
+    border: transparent 1px solid;
+    border-radius: 5px;
+    background: white; 
+    z-index: 9999;
+    position: absolute;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.car-info-item {
+    display: flex;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.color-box {
+    width: 150px;
+    height: 50px;
+    border: dotted black 1px;
+}
+
+.button-style-save {
+    background-color: #4CAF50; /* Green */
+    border: #4CAF50;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+}
+
+.button-style-save:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.button-style-cancel {
+    background-color: red; /* Green */
+    border: red;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+}
+
+.button-style-cancel:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.flex-end {
+    align-content: flex-end;
+}
+
+.button-style-back {
+    background-color: rgb(165, 165, 165);
+    border: rgb(165, 165, 165);
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+}
+
+.button-style-back:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.button-disabled {
+    background-color: rgb(80, 80, 80); /* Green */
+    border: rgb(110, 110, 110);
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+    opacity: .5;
+}

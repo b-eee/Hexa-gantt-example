@@ -1,0 +1,111 @@
+<div scope-element="$divContainer" ng-class="{
+    'newItemBackground': true,
+}" ng-show="$ctrl.show" class="mobile_sizing_new_item">
+<div class="topNavClose" ng-click="$ctrl.closeNewItemForm($ctrl.dataService.newRowItem.rowID)">
+    &#10006
+</div>
+<h3 class="newItemTitle">
+    予約作成
+</h3>
+<div class="newItemFormDiv">
+    <form ng-submit="$ctrl.submitNewItemForm($ctrl.dataService.newRowItem.rowID)" name="newItemForm">
+        <div id="formFirstDiv">
+            <div class="formHeadSection">
+                <div class="newItemInputContainer">
+                    <label>担当者</label>
+                    <select ng-model="$ctrl.client" ng-options="row.name for row in $ctrl.dataService.clients" name="client" ng-change="$ctrl.updateClient()">
+                    </select>
+                    <label>店舗メールアドレス</label>
+                    <input type="text" ng-model="$ctrl.task.shopEmailAddress">
+                </div>
+                <div class="newItemInputContainer">
+                    <label>ステータス</label>
+                    <select class="marginLeftTen" ng-model="$ctrl.task.reservationStatus">
+                        <option value="本予約">本予約</option>
+                        <option value="仮予約">仮予約</option>
+                    </select>
+                    <label>背景色</label>
+                    <select class="marginLeftTen" ng-model="$ctrl.task.COLOR">
+                        <option value="{{color.hex}}" ng-repeat="color in $ctrl.dataService.colors">{{color.name}}</option>
+                    </select>
+                    <div ng-style="$ctrl.getColor()" class="colorBox">
+                    </div>
+                </div>
+            </div>
+            <div class="formSection section1column">
+                <h3 class="formSectionTitle">予約情報</h3>            
+                <div class="newItemInputContainer">
+                    <label>お名前</label> 
+                    <input type="text" ng-model="$ctrl.task.person">
+                </div>
+                <div class="newItemInputContainer">
+                    <label>電話番号</label>
+                    <input type="text" ng-model="$ctrl.task.endTell">
+                </div>
+                <div class="newItemInputContainer">
+                    <label>メールアドレス</label>
+                    <input type="text" ng-model="$ctrl.task.email">
+                </div>
+            </div>
+            <div class="formSection section1column">
+                <h3 class="formSectionTitle">ご希望</h3>
+                <div class="newItemInputContainer">
+                    <label>席/部屋</label>
+                    <select ng-model="$ctrl.room" ng-options="row.name for row in $ctrl.dataService.tasks" name="room" ng-change="$ctrl.updateRoom()">
+                    </select>
+                </div>
+                <div class="newItemInputContainer">
+                    <label>メニュー</label>
+                    <select ng-model="$ctrl.mainMenuSelected" ng-options="row.menuName for row in $ctrl.dataService.mainMenus" ng-change="$ctrl.updateMainMenu()">
+                    </select>
+                </div>
+                <div class="newItemInputContainer" id="div_main_menu">
+                    <label></label>
+                    <input type="text" ng-model="$ctrl.task.mainMenu">
+                </div>
+                <div class="newItemInputContainer">
+                    <label>オプションメニュー</label>
+                    <select ng-model="$ctrl.optionMenuSelected" ng-options="row.menuName for row in $ctrl.dataService.optionMenus" ng-change="$ctrl.updateOptionMenu()">
+                    </select>            
+                </div>
+                <div class="newItemInputContainer" id="div_option_menu">
+                    <label></label>
+                    <input type="text" ng-model="$ctrl.task.optionMenu">
+                </div>
+            </div>
+        </div>
+        
+        <div class="formOrderSection">
+            <div class="newItemInputContainerOther">
+                <label>コメント</label>
+                <input type="text" ng-model="$ctrl.task.notes">
+            </div>
+        </div>
+
+        <div class="instructionalInformation formSection section2column">
+            <h5 class="formSectionTitle">予約日時</h5>
+            <div class="newItemInputContainer">
+                <label>予約開始日時</label>
+                <input name ="from" type="date" ng-model="$ctrl.task.reservationStartDate" ng-change="$ctrl.calInterval()">
+                <label>予約終了日時</label>
+                <input name ="to" type="date" ng-model="$ctrl.task.reservationEndDate" ng-change="$ctrl.calInterval()">
+            </div>
+            <div class="newItemInputContainer">
+                <label></label>
+                <input type="text" ng-model="$ctrl.task.reservationStartTime" ng-change="$ctrl.calInterval()" pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" placeholder="HH:mm"> 
+                <label></label>
+                <input type="text" ng-model="$ctrl.task.reservationEndTime" ng-change="$ctrl.calInterval()" pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" placeholder="HH:mm">
+            </div>
+            <div class="newItemInputContainer totalTime">
+                <label>所要時間</label>
+                <input type="text" ng-model="$ctrl.task.reservationTotalTime" ng-change="$ctrl.calTime()">
+            </div>
+        </div>
+
+        <div class="newItemFooter">
+            <input name="submitInput" type="submit" value="保存" ng-show="$ctrl.submitDisabled == false" ng-disabled="($ctrl.task.reservationEndDate === '' || $ctrl.task.reservationStartDate === '' || $ctrl.task.reservationStartTime === '' || $ctrl.task.reservationEndTime === '' || $ctrl.task.roomId === '') && $ctrl.calledfrombutton" class="formSubmitBtn">
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" ng-show="$ctrl.dataService.apiInProgress === true" style="margin: 0; width: 100px; height: 100px;"/>
+        </div>
+
+    </form>
+</div>

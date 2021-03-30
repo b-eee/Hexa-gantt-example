@@ -1,0 +1,23 @@
+.confirmMoveContainer {
+    width: auto;
+    height: auto;
+    border: black solid 4px;
+    border-radius: 15px;
+    z-index: 9999;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    background: lightblue;
+    backdrop-filter: blur(0px);
+    padding: 20px;
+}
+
+.blurBackground {
+    height: 100vh;
+    width: 100vw;
+    z-index: 9998;
+    position: absolute;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(1px);
+}

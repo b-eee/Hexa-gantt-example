@@ -1,0 +1,144 @@
+/* COMMON STYLE / TODO:MOVE TO COMMON CSS FILE */
+/* FORM STYLE */
+/* BUTTON*/
+.button-submit {
+    min-width: 180px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3eb759;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.button-submit[disabled] {
+    background: #e5e5e5;
+    color: #bbb;
+    cursor: default;
+}
+
+.button-submit:hover {
+    opacity: .8;
+}
+.button-submit[disabled]:hover {
+    opacity: 1;
+}
+
+/* LOGIN */
+login-component {
+    display: inline-flex;
+    background: #ddd;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #222;
+}
+
+.login-container{
+    margin: auto;
+    padding: 40px 60px;
+    transition: all .3s;
+    min-width: 500px;
+    box-shadow: 30px 30px 0 rgba(0,0,0,.03);
+    background: #fff;
+    font-size: 20px;
+}
+
+.login-form{
+    margin-top: 40px;
+}
+
+.login-title {
+    margin: 20px auto 10px;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+}
+
+.login-subtitle {
+    margin: 0 0 40px;
+    text-align: center;
+    color: #bbb;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: inline-flex;
+    width: 100px;
+    vertical-align: middle;
+    color: #555;
+    font-size: 15px;
+}
+
+.form-group .form-control,
+.form-group .wrap-form-control {
+    margin: 0;
+    padding: 12px 10px;
+    display: inline-flex;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #111;
+    font-size: 17px;
+    width: calc(100% - 110px);
+}
+
+.form-group .form-control.ng-empty,
+.form-group .wrap-form-control.ng-empty {
+    opacity: .5;
+}
+
+.form-group.disabled {
+    opacity: .3;
+}
+
+.form-group .wrap-form-control {
+    padding: 0;
+}
+.form-group .wrap-form-control .form-control {
+    margin: 0;
+    padding: 12px 10px;
+    border: none;
+    background-color: transparent;
+    height: 50px;
+    width: 100%;
+}
+.login-form-footer {
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+.login-button {
+    min-width: 180px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3eb759;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    opacity: .8;
+}
+
+.form-error-message {
+    margin: 30px 10px 20px;
+    color: #df3118;
+    font-size: 15px;
+}
+
+.form-error-message p {
+    margin: 0;
+}

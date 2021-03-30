@@ -1,0 +1,57 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: worklifecare
+  labels:
+    app: worklifecare
+    component: microservice
+spec:
+  selector:
+    matchLabels:
+      app: worklifecare
+      component: microservice
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 0
+  progressDeadlineSeconds: 300
+  template:
+    metadata:
+      name: worklifecare
+      labels:
+        app: worklifecare
+        component: microservice
+    spec:
+      terminationGracePeriodSeconds: 1800
+      containers:
+      - name: beee-worklifecare
+        image: hexabase.azurecr.io/beee-worklifecare
+        readinessProbe:
+          failureThreshold: 3
+          successThreshold: 1
+          httpGet:
+            path: /health_check
+            port: worklifecare
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 5
+        lifecycle:
+          preStop:
+            exec:
+              command: [ "/bin/sleep", "20" ]
+        env:
+          - name: ENV
+            value: production
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "60m"
+          limits: {}
+        imagePullPolicy: Always
+        ports:
+        - name: worklifecare
+          containerPort: 4321
+      nodeSelector:
+        type: node00

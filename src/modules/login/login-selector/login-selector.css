@@ -1,0 +1,19 @@
+login-selector-component {
+    display: inline-flex;
+    background: #ddd;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #222;
+}
+
+.login-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+.login-form{
+    font-size: 20px;
+}
