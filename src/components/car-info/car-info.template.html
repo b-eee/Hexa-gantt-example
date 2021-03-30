@@ -1,0 +1,64 @@
+<div ng-show="$ctrl.service.isCarInfoOpen === true" class="car-information-container" id="car-info-container">
+
+	<div>
+		<img src="https://img.icons8.com/ios/50/000000/settings.png" ng-if="$ctrl.isEditing === false" style="width: 20px; height: 20px;" ng-click="$ctrl.switchEditMode()" class="gear-icon">
+		<img src="https://img.icons8.com/ios-filled/50/000000/settings.png" ng-if="$ctrl.isEditing === true" style="width: 20px; height: 20px;" ng-click="$ctrl.switchEditMode()"  class="gear-icon">
+	</div>
+
+
+	
+
+
+
+
+
+	<div ng-show="!$ctrl.isEditing">
+		<div style="font-weight: bold;">
+				{{$ctrl.rowName}}
+		</div>
+		<div>
+			車検満了日: {{$ctrl.getShakenDate()}}
+		</div>
+		<div>
+			車検の有効期限切れまでの日数:  {{$ctrl.daysUntilExpire}}
+		</div>
+		<div>
+			ナンバープレート: {{$ctrl.getLicensePlate()}}
+		</div>
+	</div>
+
+	<div ng-show="$ctrl.isEditing">
+
+		<div style="font-weight: bold;">
+				{{$ctrl.rowName}}
+		</div>
+		<form>
+			<div class="newItemInputContainer">
+				<label for="customerName">車検満了日:</label>
+				<input type="date" placeholder="{{$ctrl.getShakenDate()}}" ng-model="$ctrl.carInsuranceDate">
+			</div>
+			<div class="newItemInputContainer">
+				<label for="carName">ナンバープレート:</label>
+				<input type="text" ng-model="$ctrl.rowData.plate">
+			</div>
+			<div class="newItemInputContainer">
+					<label for="colorName" >色:</label>
+					<select class="marginLeftTen" ng-model="$ctrl.selectedColor" name="colorName">
+						<option name="color" value="{{color.hex}}"  ng-repeat="color in $ctrl.colors">{{color.name}}</option>
+					</select>
+					<div ng-style="$ctrl.getColor()" class="color-box">
+					</div>
+				</div>
+				<span ng-if="$ctrl.rowData.plate === '' || $ctrl.selectedColor === '' || !$ctrl.getCarDateValidity() || $ctrl.carInsuranceDate === null" style="color: red">入力してください</span>
+		</form>
+		
+		<button ng-click="$ctrl.service.isCarInfoOpen = false" class="button-style-cancel">キャンセル</button>
+		<button ng-click="$ctrl.updateRow()" class="{{($ctrl.carInsuranceDate === undefined || $ctrl.carInsuranceDate === null) ? 'button-disabled'  : 'button-style-save' }}" ng-hide="$ctrl.rowData.plate === '' || $ctrl.selectedColor === '' || !$ctrl.getCarDateValidity()  ">保存</button> 
+	</div>
+
+	
+	
+	<div style="display: flex; margin: auto">
+		<button ng-click="$ctrl.service.isCarInfoOpen = false" ng-show="!$ctrl.isEditing" class="button-style-back">戻る</button>
+	</div>
+</div>

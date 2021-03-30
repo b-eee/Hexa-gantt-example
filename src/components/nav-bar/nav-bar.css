@@ -1,0 +1,28 @@
+.navBarTop {
+    display: flex;
+    background: #524f4a;
+    margin: 0px;
+    width: auto;
+    padding: 10px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.navBarTopLogout {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.navBarTopLogout > a {
+    color: white;
+}
+
+.navBarTopLogout > a:hover {
+    color: lightgray
+}
+  
+.navBarTopTitle {
+    display: inline;
+    flex-grow: 12;
+    margin-right: 10px;
+}

@@ -1,0 +1,74 @@
+<!-- OPTIONS BAR -->
+<!-- <div class="optionsBarTop">
+    条件絞り込み
+</div> -->
+<div class="optionsBar" style="margin-bottom: 0;">
+    <div class="optionContainer">
+        <div class="optionItem" ng-repeat="option in $ctrl.dataService.options">
+            <div ng-if="option.name=='number'"  class="optionContainer">
+                <div ng-repeat="optionval in option.options">
+                    <label ng-class="optionval.selected == true ? 'menuCheckboxLabelChecked' : 'menuCheckboxLabelUnchecked'">
+                        <input type="checkbox" ng-model="optionval.selected" ng-change="$ctrl.filterByNumber(optionval.value);" name="optionCheckbox">
+                        {{optionval.value}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="vl"></div>
+        <div class="optionItem" ng-repeat="option in $ctrl.dataService.options">
+            <div ng-if="option.name=='smoking'" class="optionContainer">
+                <div ng-repeat="optionval in option.options">
+                    <label ng-class="optionval.selected == true ? 'menuCheckboxLabelChecked' : 'menuCheckboxLabelUnchecked'">
+                        <input type="checkbox" ng-model="optionval.selected" ng-change="$ctrl.filterBySmoke(optionval.value)" name="optionCheckbox">
+                        {{optionval.value}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="optionContainerRight">
+        <div class="optionItem" style="margin-right: 10px;">
+            <img src="../../../assets/Green_Icon2.gif" ng-show="$ctrl.dataService.apiInProgress === false" style="width: 23px; height: 23px;">
+            <img src="../../../assets/Red_Icon.gif" ng-show="$ctrl.dataService.apiInProgress === true" style="width: 23px; height: 23px;">
+        </div>
+
+        <div class="optionItem" style="margin-right: 10px;">
+            <button ng-click="$ctrl.addNewTaskFromButton()" ng-disabled="$ctrl.dataService.dataHasBeenChanged">新しい予約</button>
+        </div>
+        <div class="optionItem">
+            <div class="optionItem">
+                <input name="date" type="date"  ng-model="$ctrl.service.fromDate" ng-change="$ctrl.service.updateDatesFromCalendar()" class="mobile_date">
+            </div>
+        </div>
+        <div class="optionItemArrow ">
+            <!-- <button ng-click="$ctrl.moveDateRange(-14);" ng-if="$ctrl.isOverSize()"> &laquo;</button> -->
+            <button ng-click="$ctrl.moveDateRange(-1);">&lsaquo;</button>
+        </div>
+        <div class="todayButton ">
+            <button ng-click="$ctrl.setDateToToday()">本日</button>
+        </div>
+        <div class="optionItemArrow">
+                <button ng-click="$ctrl.moveDateRange(1)">&rsaquo;</button>
+            <!-- <button ng-click="$ctrl.moveDateRange(14)"  ng-if="$ctrl.isOverSize()">&raquo;</button> -->
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="optionsBar">
+    <div class="optionContainerRight">
+        <div class="optionItem">
+            <button ng-click="$ctrl.service.updateGanttScalesByDay()">1日</button>
+        </div>
+        <div class="optionItem">
+            <button ng-click="$ctrl.service.updateGanttScalesByHour()">1時間</button>
+        </div>
+        <div class="optionItem">
+            <button ng-click="$ctrl.service.updateGanttScalesByThirty()">30分</button>
+        </div>
+        <div class="optionItem">
+            <button ng-click="$ctrl.service.updateGanttScalesByFifteen()">15分</button>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

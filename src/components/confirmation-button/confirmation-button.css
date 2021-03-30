@@ -1,0 +1,80 @@
+.flip-it {
+	position: relative;
+	width: auto;
+	height: 100%;
+	margin: auto;
+	cursor: pointer;
+}
+
+.flip {
+	position: absolute;
+	top:0;right:0;bottom:0;left:0;
+	text-align: center;
+	transition: all 150ms ease-in-out;
+	backface-visibility: hidden;
+	letter-spacing: 0px;
+}
+
+.front {
+    display: inline-flex;
+    font-weight: bold;
+	color: black;
+    background: lightgray;
+    border-radius: 7px;
+}
+
+.front:hover {
+    opacity: .7;
+}
+
+.back {
+	color: black;
+    background: lightgray;
+    border-radius: 7px;
+    display: none;
+}
+
+.flip-it.fliped .back {
+    display: inline-flex;
+    transform: rotateX(0deg);
+}
+
+.flip-it.fliped .front {
+    display: none;
+}
+
+.buttons {
+    position:absolute;
+    right: 0px;
+    height: 100%;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    color: black;
+    width: auto;
+    min-width: 50px;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background: lightgray;
+}
+
+.button:hover {
+    background: gray;
+    color: white
+}
+
+.text {
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.half {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}

@@ -1,0 +1,52 @@
+.task-information-container{
+    /* top: 0 !important; */
+}
+
+.task-information-container.newItemBackground {
+    max-height: calc(100vh - 120px);
+}
+
+.sendMailBtn {
+    background-color: #ea6a91; 
+    border: #e75480;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    transition: all .3s;
+}
+
+.sendMailBtn:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .task-information-container.newItemBackground {
+        max-width: 600px;
+        width: 90vw;
+        max-height: 90Vh;
+        margin-left: -45vw;
+    }
+
+    .newItemFormDiv {
+        /* max-width: 300px; */
+    }
+
+    input {
+        max-width: 290px;
+    }
+
+    .marginLeftTen {
+        margin: 0;
+    }
+    
+    .newItemInputContainer > input {
+        width: auto
+    }
+}

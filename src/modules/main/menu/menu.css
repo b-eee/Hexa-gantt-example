@@ -1,0 +1,406 @@
+.optionsBar{
+    display: flex;
+    /* border: solid lightgray 2px; */
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.optionsBarTop{
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: .8em;
+}
+
+.dateSelectorContainer {
+    display: flex;
+    font-size: 15px;
+}
+
+.dateSelector {
+    display: block;
+}
+
+.optionContainer{
+    display: flex;
+}
+
+.optionContainerRight{
+    display: flex;
+    margin-left: auto;
+}
+
+.optionItem{
+    display: block;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+
+.optionItemDate{
+    display: block;
+    margin-left: 1px;
+    margin-right: 20px;
+}
+
+.optionItemArrow{
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/*  GANTT ROW COLORS WHEN SELECTED*/
+.gantt-row-background{
+    background: whitesmoke;
+    /* box-shadow: 2px 2px 2px #000000;  */
+    /* box shadow to help split lines */
+}
+
+.gantt-row.custom-row-light{
+  background-color: whitesmoke;
+  /* opacity: 0.1; */
+}
+
+.newItemBtn{
+    background: none;
+    margin-left: 10px;
+    color:  #3eb759;
+    text-decoration: underline;
+}
+
+.newItemBtn > a{
+    color: #3eb759;
+}
+
+.forwardBackwardsDate{
+    color: #6e6e6e;
+    margin-right: 35px;
+}
+/* CATEGORY BUTTONS */
+.menuRadioCheckboxUncheckedLeft{
+    width: 50px;
+    height: 50px;
+    border: solid 1px #3eb759;
+    border-radius: 15px 0px 0px 15px;
+    background: white;
+    padding: 7px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menuRadioCheckboxCheckedLeft{
+    width: 50px;
+    height: 50px;
+    border: solid 1px #3eb759;
+    border-radius: 15px 0px 0px 15px;
+    background:  #3eb759;
+    padding: 7px;
+    font-size: .8em;
+    color: white;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menuRadioCheckboxUncheckedLeft > input {
+    display: none
+}
+
+.menuRadioCheckboxCheckedLeft > input {
+    display: none
+}
+
+.menuRadioCheckboxUncheckedRight{
+    width: 50px;
+    height: 50px;
+    border: solid 1px  #3eb759;
+    border-radius: 0px 15px 15px 0px;
+    background: white;
+    padding: 7px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menuRadioCheckboxCheckedRight{
+    width: 50px;
+    height: 50px;
+    border: solid 1px  #3eb759;
+    border-radius:  0px 15px 15px 0px;
+    background:  #3eb759;
+    padding: 7px;
+    color: white;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menuRadioCheckboxUncheckedRight > input {
+    display: none
+}
+
+.menuRadioCheckboxCheckedRight > input {
+    display: none
+}
+
+
+
+/* OPTION BUTTONS */
+.menuCheckboxLabelUnchecked > input {
+    display: none;
+    }
+
+.menuCheckboxLabelChecked > input {
+    display: none
+}
+
+.menuCheckboxLabelUnchecked {
+    width: 50px;
+    height: 50px;
+    border: solid 1px  #3eb759;
+    border-radius: 20px;
+    background: white;
+    padding: 7px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menuCheckboxLabelChecked{
+    width: 50px;
+    height: 50px;
+    border: solid 1px  #3eb759;
+    border-radius: 20px;
+    background:  #3eb759;
+    padding: 7px;
+    font-size: .8em;
+    color: white;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+
+.greenTheme{
+    width: 50px;
+    height: 30px;
+    border: solid 1px  #3eb759;
+    background: white;
+    padding: 0px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.greenThemeRight{
+    width: 50px;
+    height: 30px;
+    border: solid 1px  #3eb759;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+    background: white;
+    padding:0px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.greenThemeLeft{
+    width: 50px;
+    height: 30px;
+    border: solid 1px  #3eb759;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    background: white;
+    padding: 0px;
+    font-size: .8em;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.greenTheme:hover {
+    background: #3eb759;
+    color: white;
+}
+.greenThemeRight:hover {
+    background: #3eb759;
+    color: white;
+}
+.greenThemeLeft:hover {
+    background: #3eb759;
+    color: white;
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+[type="date"] {
+background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+opacity: 0;
+}
+
+input {
+border: 1px solid #c4c4c4;
+border-radius: 5px;
+background-color: #fff;
+padding: 3px 5px;
+box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+width: 125px;
+}
+
+input[type="date"] {
+    min-width: 140px;
+}
+
+.equal {
+    color: black
+}
+
+.not-equal {
+    color: red
+}
+
+.not-equal-button {
+    background: lightpink;
+    color: black;
+}
+
+.vl {
+    border-left: 1.5px solid;
+    height: 28px;
+    margin: 0 8px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+@media only screen and (max-width:1000px) {
+
+        .optionContainer{
+            float: right;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    
+        .optionContainerRight{
+            float: right;
+        }
+        .optionItem{
+            display: block;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+
+        .optionItemDate{
+            display: block;
+            margin-left: 1px;
+            margin-right: 2px;
+        }
+
+        .optionItemArrow{
+            display: block;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        .optionsBar {
+            display: block;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .menuCheckboxLabelChecked {
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+
+        .menuCheckboxLabelUnchecked {
+            width: 20px;
+            height: 20px;
+            font-size: 10px;
+        }
+    
+        .menuCheckboxLabelChecked {
+            font-size: 10px;
+        }
+
+        .menuCheckboxLabelUnchecked {
+            font-size: 10px;
+        }
+
+        .menuRadioCheckboxUncheckedLeft {
+            font-size: 10px;
+        }
+        .menuRadioCheckboxCheckedLeft {
+            font-size: 10px;
+        }
+
+        .menuRadioCheckboxUncheckedLeft  {
+            font-size: 10px;
+        }
+
+        .menuRadioCheckboxUncheckedRight {
+            font-size: 10px;
+        }
+        .mobile_number {
+            font-size: 10px;
+        }
+
+        .mobile_date {
+            width: 25px;
+        }
+
+        .optionItem > button {
+            font-size: 10px;
+        }
+
+        .mobile_hide {
+            display: none;
+        }
+  }
