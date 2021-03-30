@@ -3,8 +3,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // const apiHost = 'http://localhost:7575';
-// const apiHost = 'https://az-api.hexabase.com';
-const apiHost = 'https://api.hexabase.com';
+// const apiHost = 'https://api.hexabase.com';
+const apiHost = 'https://az-api.hexabase.com';
+
 const sseHost = 'http://localhost:5002';
 const sseEventHost = process.env.ENV === 'local' ? 'http://localhost:5002' : '';
 
