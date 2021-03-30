@@ -2,9 +2,10 @@
 
 Example of reservation management app
 
-## Requires Node 8.4.0+
+## Requires 
 
-Run with npm:
+- Node 8.4.0+
+- Run with npm:
 
 ## Get started
 
