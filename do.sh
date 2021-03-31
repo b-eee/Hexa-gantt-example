@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_NAME=${APP_NAME:-worklifecare}
+APP_NAME=${APP_NAME:-hexa-gantt}
 
 start () {
   export ENV=${ENV:-'local'}
