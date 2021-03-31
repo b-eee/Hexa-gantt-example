@@ -1,14 +1,14 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: worklifecare
+  name: hexa-gantt
   labels:
-    app: worklifecare
+    app: hexa-gantt
     component: microservice
 spec:
   selector:
     matchLabels:
-      app: worklifecare
+      app: hexa-gantt
       component: microservice
   replicas: 2
   strategy:
@@ -19,21 +19,21 @@ spec:
   progressDeadlineSeconds: 300
   template:
     metadata:
-      name: worklifecare
+      name: hexa-gantt
       labels:
-        app: worklifecare
+        app: hexa-gantt
         component: microservice
     spec:
       terminationGracePeriodSeconds: 1800
       containers:
-      - name: beee-worklifecare
-        image: hexabase.azurecr.io/beee-worklifecare
+      - name: beee-hexa-gantt
+        image: hexabase.azurecr.io/beee-hexa-gantt
         readinessProbe:
           failureThreshold: 3
           successThreshold: 1
           httpGet:
             path: /health_check
-            port: worklifecare
+            port: hexa-gantt
           initialDelaySeconds: 1
           periodSeconds: 10
           timeoutSeconds: 5
@@ -51,7 +51,7 @@ spec:
           limits: {}
         imagePullPolicy: Always
         ports:
-        - name: worklifecare
+        - name: hexa-gantt
           containerPort: 4321
       nodeSelector:
         type: node00
