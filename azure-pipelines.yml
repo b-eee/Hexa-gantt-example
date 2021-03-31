@@ -6,7 +6,7 @@ trigger:
   batch: true
   branches:
     include:
-    - develop
+    - development
 
 pr: none
 
@@ -17,7 +17,7 @@ variables:
   - name: dockerRegistryServiceConnection
     value: '5b2c1a86-adaf-4fe6-84f9-536f844827fc'
   - name: imageRepository
-    value: 'beee-worklifecare'
+    value: 'beee-hexa-gantt'
   - name: containerRegistry
     value: 'hexabase.azurecr.io'
   - name: dockerfilePath
@@ -75,7 +75,7 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/manifests/deployments/worklifecare-deploy-stg.yml
-                $(Pipeline.Workspace)/manifests/services/worklifecare-svc.yml
+                $(Pipeline.Workspace)/manifests/deployments/hexa-gantt-deploy-stg.yml
+                $(Pipeline.Workspace)/manifests/services/hexa-gantt-svc.yml
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
