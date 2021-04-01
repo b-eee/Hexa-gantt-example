@@ -19,15 +19,15 @@ build_push () {
 # generate_k8s_config () {
 #     mkdir -p ./docker/k8s/configs
 
-#     cat > ./docker/k8s/configs/worklifecare-envs.yml <<EOF
+#     cat > ./docker/k8s/configs/hexa-gantt-envs.yml <<EOF
 # apiVersion: v1
 # kind: ConfigMap
 # metadata:
-#   name: worklifecare-envs
+#   name: hexa-gantt-envs
 #   labels:
-#     app: worklifecare
+#     app: hexa-gantt
 #     component: microservice
-#     role: worklifecare
+#     role: hexa-gantt
 # data:
 #   API_ADDRESS: "beee-apicore"
 #   API_SERVER_PORT: "9000"

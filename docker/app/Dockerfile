@@ -7,11 +7,11 @@ RUN apt-get update -qq && apt-get install -qy \
     curl \
     libfontconfig \
     --no-install-recommends
-WORKDIR /worklifecare/
+WORKDIR /hxgantt/
 COPY package*.json ./
 RUN npm install \
     && npm cache clean --force
-ENV PATH /worklifecare/node_modules/.bin:$PATH
+ENV PATH /hxgantt/node_modules/.bin:$PATH
 ENV TINI_VERSION v0.18.0
 ARG ENV
 ENV ENV $ENV

@@ -123,7 +123,7 @@ class DataService {
 	establishInitialConnection() {
 		console.log('Establishing Initial Connection..')
 		const payload =  {
-			"channel": `worklifecare_channel_${this.projectSelected}`,
+			"channel": `hxgantt_channel_${this.projectSelected}`,
 			"message": 'ESTABLISH_SEE_CONNECTION',
 			"event": "message"
 		}
@@ -201,7 +201,7 @@ class DataService {
 
 		this.makeDataPromise()
 		this.updateRowFilter()
-		this.sse = new EventSource(`${SSE_EVENT_HOST}/sse?channel=worklifecare_channel_${this.projectSelected}`); ///SUBSCRIBE?CHANNEL=TEST_12345
+		this.sse = new EventSource(`${SSE_EVENT_HOST}/sse?channel=hxgantt_channel_${this.projectSelected}`); ///SUBSCRIBE?CHANNEL=TEST_12345
 
 		this.sse.onmessage = function(event) {
 			let data = JSON.parse(event.data)
@@ -515,7 +515,7 @@ class DataService {
 	
 	sendMessage() {
 		let dPayload =  {
-			"channel": `worklifecare_channel_${this.projectSelected}`,
+			"channel": `hxgantt_channel_${this.projectSelected}`,
 			"message": this.userID,
 			"event": "message"
 		}
