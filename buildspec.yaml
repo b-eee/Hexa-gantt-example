@@ -14,7 +14,7 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - echo Logging in to Docker Hub...
       - echo $DOCKER_COMPANY_PASSWORD | docker login -u $DOCKER_COMPANY_USERNAME --password-stdin 
-      - REPOSITORY_URI=348686912638.dkr.ecr.ap-northeast-1.amazonaws.com/beee-apicore
+      - REPOSITORY_URI=348686912638.dkr.ecr.ap-northeast-1.amazonaws.com/beee-demo-hexa-gantt-example
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
@@ -22,7 +22,7 @@ phases:
       - echo Build started on `date`
       - echo Logging in to Github...
       - echo Building the Docker image...
-      - docker build -f docker/arm/Dockerfile -t $REPOSITORY_URI:latest --build-arg ACCESS_TOKEN_USR=$GITHUB_COMPANY_USERNAME --build-arg ACCESS_TOKEN_PWD=$GITHUB_COMPANY_TOKEN .
+      - docker build -f docker/app/Dockerfile -t $REPOSITORY_URI:latest --build-arg ACCESS_TOKEN_USR=$GITHUB_COMPANY_USERNAME --build-arg ACCESS_TOKEN_PWD=$GITHUB_COMPANY_TOKEN .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
