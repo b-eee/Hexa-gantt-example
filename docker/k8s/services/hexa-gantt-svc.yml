@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: beee-hexa-gantt
+  name: beee-hexa-vue
   labels:
-    app: hexa-gantt
+    app: hexa-vue
     component: microservice
 spec:
   ports:
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: 4321
   selector:
-    app: hexa-gantt
+    app: hexa-vue
   sessionAffinity: None
   type: ClusterIP

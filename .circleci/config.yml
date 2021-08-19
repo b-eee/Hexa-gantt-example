@@ -1,0 +1,35 @@
+
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@7.0.0
+  aws-eks: circleci/aws-eks@1.1.0
+workflows:
+  build-deploy-to-k8s:
+    jobs:
+      - aws-ecr/build-and-push-image:
+          filters:
+              branches:
+                only:
+                  - develop      
+          context:
+            - devops
+          repo: hexa-vue
+          dockerfile: docker/app/Dockerfile
+          tag: $CIRCLE_SHA1          
+      - aws-eks/update-container-image:
+          filters:
+              branches:
+                only:
+                  - develop      
+          context:
+            - devops      
+          cluster-name: linker-stg
+          aws-region: $AWS_REGION
+          resource-name: "deployment/ft"
+          container-image-updates: "hexa-vue=$AWS_ECR_ACCOUNT_URL/hexa-vue:$CIRCLE_SHA1"
+          get-rollout-status: true
+          watch-rollout-status: true
+          namespace: default
+          record: true
+          requires: 
+            - aws-ecr/build-and-push-image
